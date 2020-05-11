@@ -1,23 +1,26 @@
 <div class="bg-image">
-  <h1>{{ title }}</h1>
-  <h2>{{ subtitle }}</h2>
+  <h1 class="title">{{ title }}</h1>
+  <h2 class="title">{{ subtitle }}</h2>
 
   <div class="cube-container">
     <div
       class="box-scene"
       *ngFor="let structure of structures; index as structureId"
     >
-      <a
-        [title]="structure.name + ' details'"
-        [routerLink]="['/structures', structureId]"
-      >
+      <a [title]="structure.name" [routerLink]="['/structures', structureId]">
         <div class="box">
           <div class="front face">
             <h2>{{ structure.name }}</h2>
             <img src="{{ structure.imagePath }}" />
           </div>
           <div class="side face">
-            <p>Back</p>
+            <p>{{ structure.name }}</p>
+            <ul>
+              <li>Implementation</li>
+              <li>Uses</li>
+              <li>Searching</li>
+              <li>Interview questions</li>
+            </ul>
           </div>
         </div>
       </a>

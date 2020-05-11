@@ -15,6 +15,7 @@ import { StructDetailsComponent } from './struct-details/struct-details.componen
     RouterModule.forRoot([
       { path: '', component: StructListComponent },
       { path: 'structures/:structureId', component: StructDetailsComponent },
+      { path: 'linkedlists', component: StructDetailsComponent },
     ]),
   ],
   providers: [],
