@@ -1,4 +1,5 @@
 import { Structure } from './structure';
+import { NullTemplateVisitor } from '@angular/compiler';
 
 export const STRUCTURES: Structure[] = [
   {
@@ -19,7 +20,9 @@ export const STRUCTURES: Structure[] = [
     body0: `Each element in the list is stored as a Node with two properties - its data and the 
     next node in the list. To add a new element, we make a new Node with the current list head as its 
     'next' property. The code below implements this with the insertHead(data) method:`,
-    snippet: `\n
+    body1: `To search an unsorted linked list, each element will need to be looked at. We use a 
+    pointer that's assigned to the head, and then traverse the list until the end:`,
+    snippet0: `\n
     class Node {
       constructor(data, next = null) {
         this.data = data;
@@ -38,14 +41,28 @@ export const STRUCTURES: Structure[] = [
         this.size++;
       }
     }`,
+    snippet1: `\n
+    const linearSearch = (list, value) => {
+      if (!list.head) return false;
+
+      let pointer = list.head;
+      while (pointer) {
+        if (pointer.data === value) return true;
+        pointer = pointer.next;
+      } 
+      return false
+    };`,
   },
+
   {
     imagePath: '/assets/images/queue.png',
     name: 'Queues',
     intro0: null,
     intro1: null,
     body0: null,
-    snippet: null,
+    body1: null,
+    snippet0: null,
+    snippet1: null,
   },
   {
     imagePath: '/assets/images/stack.png',
@@ -53,7 +70,9 @@ export const STRUCTURES: Structure[] = [
     intro0: null,
     intro1: null,
     body0: null,
-    snippet: null,
+    body1: null,
+    snippet0: null,
+    snippet1: null,
   },
   {
     imagePath: '/assets/images/tree.png',
@@ -61,7 +80,9 @@ export const STRUCTURES: Structure[] = [
     intro0: null,
     intro1: null,
     body0: null,
-    snippet: null,
+    body1: null,
+    snippet0: null,
+    snippet1: null,
   },
   {
     imagePath: '/assets/images/graph5.png',
@@ -69,6 +90,8 @@ export const STRUCTURES: Structure[] = [
     intro0: null,
     intro1: null,
     body0: null,
-    snippet: null,
+    body1: null,
+    snippet0: null,
+    snippet1: null,
   },
 ];

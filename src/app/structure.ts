@@ -4,5 +4,7 @@ export interface Structure {
   intro0: string;
   intro1: string;
   body0: string;
-  snippet: string;
+  body1: string;
+  snippet0: string;
+  snippet1: string;
 }
