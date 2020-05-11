@@ -1,0 +1,101 @@
+h1 {
+  /*color: rgb(58, 75, 92); */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  margin: 0;
+  padding-top: 14rem;
+  padding-left: 7rem;
+}
+h2,
+h3 {
+  /*color: rgb(58, 75, 92);*/
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.15rem;
+  margin-top: 0;
+  padding-left: 7rem;
+}
+
+body,
+input[type="text"],
+button {
+  color: #333;
+  font-family: Cambria, Georgia;
+}
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: black;
+}
+
+.bg-image {
+  background: #161415 url("/assets/images/mixerboard.jpg") no-repeat top center;
+  background-size: cover !important;
+  -webkit-background-size: cover !important;
+  height: 100vh;
+}
+
+.cube-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-scene {
+  -webkit-perspective: 700;
+  width: 200px;
+  height: 200px;
+  z-index: 999;
+  margin: 20px 10px;
+}
+.box-scene:hover .box {
+  -webkit-transform: rotateY(-90deg);
+  transform: rotateY(-90deg);
+}
+.box {
+  width: 180px;
+  height: 180px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.4s ease-out;
+  transform-origin: 90px 90px -90px;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: all 0.4s ease-out;
+  -webkit-transform-origin: 90px 90px -90px;
+
+  /* float: left; */
+  margin: 30px auto;
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: solid 0.5px;
+  -webkit-backface-visibility: visible;
+  -webkit-transform-origin: 0 0;
+  backface-visibility: visible;
+  transform-origin: 0 0;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 1);
+}
+.front {
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  z-index: 2;
+  background: #d9d9d9;
+}
+.side {
+  background: #f8b82e;
+  -webkit-transform: rotateY(90deg);
+  transform: rotateY(90deg);
+  z-index: 1;
+  left: 180px;
+}
+
+img {
+  padding: 5px;
+  width: 170px;
+}
