@@ -64,12 +64,14 @@ export const STRUCTURES: Structure[] = [
       the queue is the first element that's removed, the second element added is the second 
       removed and so on (i.e. just like a queue in real life).`,
     intro1: `Adding an element to the queue is called enqueuing, removing an element is called
-    dequeuing. Queues can be implemented using a linked list - all that's needed is for the list 
+    dequeuing`,
+    body0: `Queues can be implemented using a linked list - all that's needed is for the list 
     to keep track of the front of the queue. When we're dequeing an element, we simply ask the pointer
     looking at the front of the queue to look at the next element in line instead. With enqueuing, we
     traverse the queue until the end and then add the new element:`,
-    body0: null,
-    body1: null,
+    body1: `We search a queue the same way we search a linked list - with a pointer that traverses
+    through each node. The only difference is that we start with the pointer looking at the front,
+    rather than at the 'head' as we did with a linked list:`,
     snippet0: `\n
     class Node {
       constructor(data) {
@@ -108,17 +110,76 @@ export const STRUCTURES: Structure[] = [
       }
     }
     \n`,
-    snippet1: null,
+    snippet1: `\n
+    const linearSearch = (queue, value) => {
+      if (!queue.front) return false;
+
+      let pointer = queue.front;
+      while (pointer.next != null) {
+        if (pointer.data === value) return true;
+        pointer = pointer.next;
+      } 
+      return false
+    };
+    \n`,
   },
   {
     imagePath: '/assets/images/stack.png',
     name: 'Stacks',
-    intro0: null,
-    intro1: null,
-    body0: null,
-    body1: null,
-    snippet0: null,
-    snippet1: null,
+    intro0: `Stacks are Last-In Last-Out (LILO), so the last element added is the firt that's removed.
+    We add elements to a stack by pushing them, and we remove elements by popping them - just like an
+    array in JavaScript. The benefit with a Stack is that pushing and popping elements are in constant time
+    (i.e. O(1)) if we implement the stack via a linked list, whereas with an array pushing and popping is in
+    linear time i.e. O(n).`,
+    intro1: `JavaScript uses a call-stack to handle events, and web browsers use stacks with the back button by
+    popping the last page you visited each time you press back.`,
+    body0: `As mentioned above stacks can be implemented via a linked list - all that's needed is for the
+    list to keep track of the top element i.e. the most recently added. To pop the top element, the pointer
+    looking at the top simply looks at the next element instead:`,
+    body1: `To search a stack we need a pointer that's looking at the head, we then traverse the stack
+    until the end is reached:`,
+    snippet0: `\n
+    class Node {
+      constructor(data) {
+        this.data = data;
+        this.previous = null;
+      }
+    }
+    
+    class Stack {
+      constructor() {
+        this.top = null;
+      }
+    
+      push(data) {
+        let node = new Node(data);
+        node.previous = this.top;
+        this.top = node;
+      }
+   
+      pop() {
+        let temp = this.top;
+        this.top = this.top.previous;
+        return temp;
+      }
+    
+      peek() {
+        return this.top;
+      }
+    }
+    \n`,
+    snippet1: `\n
+    const linearSearch = (stack, value) => {
+      if (!stack.top) return false;
+
+      let pointer = stack.top;
+      while (pointer.previous != null) {
+        if (pointer.data === value) return true;
+        pointer = pointer.previous;
+      } 
+      return false
+    };
+    \n`,
   },
   {
     imagePath: '/assets/images/tree.png',
