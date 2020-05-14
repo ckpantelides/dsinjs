@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+// Smooth scroll package
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +19,7 @@ import { StructDetailsComponent } from './struct-details/struct-details.componen
       { path: 'structures/:structureId', component: StructDetailsComponent },
       { path: 'linkedlists', component: StructDetailsComponent },
     ]),
+    ScrollToModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
