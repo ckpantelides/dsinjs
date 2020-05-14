@@ -1,13 +1,14 @@
 <div *ngIf="structure">
   <div *ngIf="structure.intro0; else elseBlock">
-    <h3>{{ structure.name }}</h3>
-
+    <h3>
+      <a title="Homepage" routerLink="/"> {{ structure.name }}</a>
+    </h3>
     <div class="details-container">
-      <h5>Introduction</h5>
+      <h5 id="section1">Introduction</h5>
       <p>{{ structure.intro0 }}</p>
       <p>{{ structure.intro1 }}</p>
 
-      <h5>Implementation</h5>
+      <h5 id="section2">Implementation</h5>
       <p>{{ structure.body0 }}</p>
       <pre>{{ structure.snippet0 }}</pre>
 
@@ -18,7 +19,9 @@
   </div>
 
   <ng-template #elseBlock>
-    <h3>{{ structure.name }}</h3>
+    <h3>
+      <a title="Homepage" routerLink="/"> {{ structure.name }} </a>
+    </h3>
     <div class="details-container" style="text-align: center;">
       <h4>Coming soon</h4>
       <p>
