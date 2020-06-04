@@ -45,10 +45,33 @@ a {
 }
 
 .bg-image {
-  background: #161415 url("/assets/images/mixerboard.jpg") no-repeat top center;
+ /* background: #161415 url("/assets/images/mixerboard.jpg") no-repeat top center; */
+ /*background-color: lavenderblush; */
   background-size: cover;
   -webkit-background-size: cover;
   height: 100vh;
+}
+
+.color1 {
+  background-color : #f0f5ff;
+
+}
+
+.color2 {
+  background-color : #ffffb4;
+}
+
+
+.color3 {
+  background-color :#fff0f5;
+
+}
+
+.color-wheel {
+  height: 45px;
+    width: auto;
+    margin: 15px;
+    float: right;
 }
 
 .cube-container {

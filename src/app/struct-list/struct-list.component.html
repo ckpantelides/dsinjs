@@ -1,4 +1,5 @@
-<div class="bg-image">
+<div class="bg-image" [ngClass]="{color1:bgColor=='color1',color2:bgColor=='color2',color3:bgColor=='color3'}"> 
+  <img src="/assets/images/color-wheel.png" class="color-wheel" (click)="cycleColor()">
   <h1 class="title">{{ title }}</h1>
   <h2 class="title">{{ subtitle }}</h2>
 

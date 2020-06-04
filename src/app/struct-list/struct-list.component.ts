@@ -11,6 +11,15 @@ export class StructListComponent implements OnInit {
   subtitle = 'uses, implementation and traversal in Javascript';
   structures = STRUCTURES;
 
+  bgColor = 'color3'
+  count = 0;
+  colors = ['color1' , 'color2' , 'color3'];
+  
+  cycleColor() {
+    this.bgColor = this.colors[this.count++ % 3]
+  }
+
+
   constructor() {}
 
   ngOnInit(): void {}
