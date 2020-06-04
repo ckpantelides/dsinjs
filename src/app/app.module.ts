@@ -8,9 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StructListComponent } from './struct-list/struct-list.component';
 import { StructDetailsComponent } from './struct-details/struct-details.component';
+import { LefthandNavComponent } from './lefthand-nav/lefthand-nav.component';
 
 @NgModule({
-  declarations: [AppComponent, StructListComponent, StructDetailsComponent],
+  declarations: [AppComponent, StructListComponent, StructDetailsComponent, LefthandNavComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
