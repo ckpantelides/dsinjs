@@ -1,5 +1,16 @@
-<div class="bg-image" [ngClass]="{color1:bgColor=='color1',color2:bgColor=='color2',color3:bgColor=='color3'}"> 
-  <img src="/assets/images/color-wheel.png" class="color-wheel" (click)="cycleColor()">
+<div
+  class="bg-image"
+  [ngClass]="{
+    color1: bgColor == 'color1',
+    color2: bgColor == 'color2',
+    color3: bgColor == 'color3'
+  }"
+>
+  <img
+    src="/assets/images/color-wheel.png"
+    class="color-wheel"
+    (click)="cycleColor()"
+  />
   <h1 class="title">{{ title }}</h1>
   <h2 class="title">{{ subtitle }}</h2>
 
@@ -9,20 +20,9 @@
       *ngFor="let structure of structures; index as structureId"
     >
       <a [title]="structure.name" [routerLink]="['/structures', structureId]">
-        <div class="box">
-          <div class="front face">
-            <h2>{{ structure.name }}</h2>
-            <img src="{{ structure.imagePath }}" />
-          </div>
-          <div class="side face">
-            <p>{{ structure.name }}</p>
-            <ul>
-              <li>Implementation</li>
-              <li>Uses</li>
-              <li>Searching</li>
-              <li>Interview questions</li>
-            </ul>
-          </div>
+        <div class="hvr-outline-out face">
+          <h2>{{ structure.name }}</h2>
+          <img src="{{ structure.imagePath }}" />
         </div>
       </a>
     </div>

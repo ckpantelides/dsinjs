@@ -1,15 +1,32 @@
 :host {
-    width: 10%;
-    float: left;
+  width: 10%;
+  float: left;
+  height: 100%;
+  position: fixed;
 }
 
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+h5 {
+  margin: 0;
+  font-size: 0.8rem;
+}
 ul {
-    list-style: none;
-    padding: 0;
-
+  list-style: none;
+  padding: 0;
 }
 
 li {
-    margin: none;
-    font-size: 0.75rem;
+  margin: none;
+  font-size: 0.75rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }

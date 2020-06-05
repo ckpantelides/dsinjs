@@ -85,7 +85,8 @@ export const STRUCTURES: Structure[] = [
         this.front = null;
       }
     
-      // If there's nothing at the front of the queue, add the element to the front
+      // If there's nothing at the front of the queue, 
+      // add the element to the front
       enqueue(data) {
         if (!this.front) {
           this.front = new Node(name, type);
@@ -98,7 +99,8 @@ export const STRUCTURES: Structure[] = [
           pointer.next = new Node(name, type);
         }
       }
-      // By changing the front to the next in-line, the front of the queue is removed
+      // By changing the front to the next in-line, 
+      // the front of the queue is removed
       dequeue() {
         let temp = this.front;
         this.front = this.front.next;
