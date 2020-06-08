@@ -61,3 +61,9 @@ pre {
   border-radius: 0.5%;
   background-color: #ededed;
 }
+
+@media screen and (max-width: 769px) {
+  :host {
+    width: 100%;
+  }
+}

@@ -113,6 +113,7 @@ img {
 
   position: relative;
 }
+
 .hvr-outline-out:before {
   content: "";
   position: absolute;
@@ -126,6 +127,7 @@ img {
   -webkit-transition-property: top, right, bottom, left;
   transition-property: top, right, bottom, left;
 }
+
 .hvr-outline-out:hover:before,
 .hvr-outline-out:focus:before,
 .hvr-outline-out:active:before {
@@ -138,6 +140,10 @@ img {
 /*  CSS for mobile */
 
 @media screen and (max-width: 769px) {
+  :host {
+    width: 100%;
+  }
+
   h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.5rem;
@@ -163,6 +169,6 @@ img {
   }
 
   .box-scene {
-    margin: 0;
+    margin: 20px 0;
   }
 }
