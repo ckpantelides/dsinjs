@@ -24,11 +24,31 @@ ul {
 li {
   margin: none;
   font-size: 0.75rem;
+  position: relative;
+  cursor: pointer;
 }
 
 a {
   text-decoration: none;
   color: black;
+}
+
+.menu-label {
+  display: none;
+  width: 100px;
+  background-color: rgb(141, 137, 137);
+  font-size: 0.7rem;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  margin-left: -50px;
+}
+
+.menu-item:hover + .menu-label {
+  display: block;
 }
 
 @media screen and (max-width: 769px) {
