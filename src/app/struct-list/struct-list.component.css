@@ -75,6 +75,25 @@ a {
   width: auto;
   margin: 1rem;
   float: right;
+  cursor: pointer;
+}
+
+.color-wheel-label {
+  float: right;
+  display: none;
+  width: 100px;
+  background-color: rgb(141, 137, 137);
+  font-size: 0.7rem;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  z-index: 1;
+  margin-right: -10px;
+  margin-top: 25px;
+}
+
+.color-wheel:hover + .color-wheel-label {
+  display: block;
 }
 
 .cube-container {
