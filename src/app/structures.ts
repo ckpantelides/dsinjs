@@ -187,12 +187,107 @@ export const STRUCTURES: Structure[] = [
   {
     imagePath: '/assets/images/tree.png',
     name: 'Trees',
-    intro0: null,
-    intro1: null,
-    body0: null,
-    body1: null,
-    snippet0: null,
-    snippet1: null,
+    intro0: `A tree is a collection of nodes where each node can connect to more than one other node. 
+    There's a hierachy to all of the nodes. The first node of the tree is called the root. When two 
+    nodes are connected, the node closest to the root is the parent, the other node is the child.`,
+    intro1: `Each node can have multiple child nodes but only one parent node. This is what distinguishes 
+    the structure from other graphs (a tree is a type of graph, but as it has a simpler structure to other 
+    graphs, it's helpful to consider its implementation first). As the root is the first node it has no 
+    parent. If a node has no children it's called a leaf. A tree is therefore a non-linear data structure, as there 
+    isn't one route connecting all the data. Arrays, stacks and queues are linear data structures as all of 
+    the data is stored in sequence.`,
+    body0: `Below is the implementation of a binary search tree. Each node can have a maximum of two children - a left child
+    and a right child. Each left child is smaller than or equal to its parent node. Each right child is greater than its parent
+    node:`,
+    body1: `A binary search tree can be searched with a recursive function i.e. by a function that calls itself until it's resolved:`,
+    snippet0: `\n
+    // Each node stores its data, and a pointer to its 
+    // left and right children
+    class Node {
+      constructor(data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+      }
+    }
+    
+    class BinarySearchTree {
+      constructor(){
+        this.root = null;
+      }
+
+      // Insert a node into a binary search tree
+      insert(val) {
+        // If there tree's empty, the new data is the root
+        if (this.root === null) {
+          this.root = new Node(val);
+        } 
+      
+        // Else find the correct location for the new data
+        else {
+          // Set a pointer to the root of the tree
+          let pointer = this.root;
+
+          // The loop will continue until the data is inserted
+          while (pointer.data !== val) {
+
+            // If our value is greater than the current node, 
+            // traverse down the righthand side
+            if (pointer.data < val) {
+
+              // If there's no righthand node, create a new 
+              // node with the value
+              if (!pointer.right) {
+                pointer.right = new Node(val);
+        
+              // Else continue traversing down the righthand side
+              } else {
+                pointer = pointer.right;
+              }
+
+            // If the value is smaller than the current node, 
+            // traverse the lefthand side
+            } else {
+
+              // If there's no lefthand node, create a new 
+              // node with the value
+              if (!pointer.left) {      
+                pointer.left = new Node(val);
+        
+              // Else continue traversing down the lefthand side
+              } else {
+                pointer = pointer.left;
+              }
+            }
+          }
+        }
+      }
+    }`,
+    snippet1: `\n
+    // Start the function with the tree's root, i.e. tree.root
+    function searchBST(root, value) {
+
+      // If the root is null, return not found
+      if (root === null) {
+        console.log("Value not found");
+      }
+
+      // If the value is found, return the node
+      if (root.data === value) { 
+        return root; 
+      }
+
+      // If the value is less than the root's data search the lefthand 
+      // side of the tree by recursively calling this function
+      if (root.data > value) {
+        return searchBST(root.left, value); 
+      }
+
+      // Else recursively search the righthand side 
+      else { 
+        return searchBST(root.right, value); 
+      } 
+    }`,
   },
   {
     imagePath: '/assets/images/graph.png',
